@@ -32,6 +32,6 @@ int main()
     std::cout << "Átlag: " << atlag << std::endl; 
 
     delete[] b; // Felszabadítjuk a dinamikusan foglalt memóriát, ez is hiányzott ha hibának vehető
-
+    std::cout << "Kiíratok valamit stdouttal mint ismerős" << std::endl;
     return 0;
 }
