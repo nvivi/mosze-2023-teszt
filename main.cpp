@@ -4,24 +4,34 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS]; //Rosszul van írva a N_ELEMENTS
-    std::cout << '1-100 ertekek duplazasa' //"" kéne, hogy legyen és nincs ;
-    for (int i = 0;) //Hiányzik a feltétel, az i növelése
+    int *b = new int[N_ELEMENTS]; // Rosszul volt írva a NELEMENTS
+
+    std::cout << "1-100 értékek duplázása"; // Hiányzott a pontosvessző
+
+    for (int i = 0; i < N_ELEMENTS; i++) // Hiányzott a pontosvessző, és a ciklus feltételében i<n_elements
     {
         b[i] = i * 2;
     }
-    for (int i = 0; i; i++) //Hiányzik a feltétel
+
+    for (int i = 0; i < N_ELEMENTS; i++) // Hiányzott a pontosvessző, és a ciklus feltételében i<n_elements
     {
-        std::cout << "Ertek:" //Hiányzik a ; és a konrkét érték
+        std::cout << "Érték: " << b[i] << std::endl; // Hiányzott maga az érték(b[i])
     }    
-    std::cout << "Atlag szamitasa: " << std::endl; 
-    int atlag; //Nem adunk neki értéket
-    for (int i = 0; i < N_ELEMENTS, i++) 
+
+    std::cout << "Átlag számítása: " << std::endl;
+
+    int atlag = 0; // Hiányzott a változó értékadása
+
+    for (int i = 0; i < N_ELEMENTS; i++) // Hiányzott a pontosvessző, és a ciklus feltételében i<n_elements
     {
-        atlag += b[i] //Nincs ;
+        atlag += b[i]; // Hiányzott a ;
     }
-    atlag /= N_ELEMENTS;
-    std::cout << "Atlag: " << atlag << std::endl;
+
+    atlag /= N_ELEMENTS; 
+
+    std::cout << "Átlag: " << atlag << std::endl; 
+
+    delete[] b; // Felszabadítjuk a dinamikusan foglalt memóriát, ez is hiányzott ha hibának vehető
+
     return 0;
 }
-
